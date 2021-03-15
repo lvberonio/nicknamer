@@ -1,0 +1,192 @@
+{
+	"info": {
+		"_postman_id": "229bfd2e-7fa5-4c4d-925e-8b68b996644e",
+		"name": "Nicknamer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Suggest Males Names",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response should be OK\", function () {",
+							"    pm.response.to.be.ok;",
+							"    pm.response.to.have.status(200);",
+							"    pm.response.to.be.withBody;",
+							"});",
+							"",
+							"pm.test(\"Body has object responses\" , function(){",
+							"    var response = pm.response.json();",
+							"    ",
+							"    pm.expect(response.status).to.eql(\"success\");",
+							"    pm.expect(typeof(response.data) === \"object\").to.be.true;",
+							"    pm.expect(typeof(response.data.fname) === \"string\").to.be.true;",
+							"    pm.expect(typeof(response.data.lname) === \"string\").to.be.true;",
+							"    pm.expect(typeof(response.data.uname) === \"string\").to.be.true;",
+							"});",
+							"",
+							"pm.environment.set(\"sex\", \"female\");",
+							"",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Api-Key",
+						"value": "{{xApiKey}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"sex\": \"{{sex}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Suggest Females Names",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response should be OK\", function () {",
+							"    pm.response.to.be.ok;",
+							"    pm.response.to.have.status(200);",
+							"    pm.response.to.be.withBody;",
+							"});",
+							"",
+							"pm.test(\"Body has object responses\" , function(){",
+							"    var response = pm.response.json();",
+							"    ",
+							"    pm.expect(response.status).to.eql(\"success\");",
+							"    pm.expect(typeof(response.data) === \"object\").to.be.true;",
+							"    pm.expect(typeof(response.data.fname) === \"string\").to.be.true;",
+							"    pm.expect(typeof(response.data.lname) === \"string\").to.be.true;",
+							"    pm.expect(typeof(response.data.uname) === \"string\").to.be.true;",
+							"});",
+							"",
+							"pm.environment.set(\"sex\", \"\");",
+							"",
+							"",
+							"",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Api-Key",
+						"type": "text",
+						"value": "{{xApiKey}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"sex\": \"{{sex}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Suggest Random Names",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response should be OK\", function () {",
+							"    pm.response.to.be.ok;",
+							"    pm.response.to.have.status(200);",
+							"    pm.response.to.be.withBody;",
+							"});",
+							"",
+							"pm.test(\"Body has object responses\" , function(){",
+							"    var response = pm.response.json();",
+							"    ",
+							"    pm.expect(response.status).to.eql(\"success\");",
+							"    pm.expect(typeof(response.data) === \"object\").to.be.true;",
+							"    pm.expect(typeof(response.data.fname) === \"string\").to.be.true;",
+							"    pm.expect(typeof(response.data.lname) === \"string\").to.be.true;",
+							"    pm.expect(typeof(response.data.uname) === \"string\").to.be.true;",
+							"});",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Api-Key",
+						"type": "text",
+						"value": "{{xApiKey}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"sex\": \"{{sex}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

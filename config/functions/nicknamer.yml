@@ -1,0 +1,10 @@
+suggestNames:
+  handler: ${self:custom.path.app}/handlers/suggest.handler
+  description: Receives request and gets suggested names
+  timeout: 15
+  events:
+    - http:
+        path: /
+        method: post
+        private: false
+        cors: ${self:custom.http.cors}
